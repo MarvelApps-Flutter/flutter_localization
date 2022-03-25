@@ -1,0 +1,31 @@
+{
+    "helloWorld": "¡Hola Mundo!",
+    "appTitle": "Aplicación de localización",
+    "appContent": "Esta aplicación está hecha para demostrar el uso de la localización en Flutter.",
+    "breadName" : "Pan integral fresco",
+    "breadDecription" : "El pan integral o pan integral es un tipo de pan elaborado con harina parcial o totalmente molida a partir de granos de trigo integral o casi integral, véase harina de trigo integral y grano integral. Es un tipo de pan integral.",
+    "breadQuantity" : "500 gramos",
+    "breadPrice" : "₹ 50",
+
+    "butterName" : "mantequilla fresca",
+    "butterDecription" : "La mantequilla sin sal está hecha de crema fresca y nada más. Es mantequilla fresca en estado puro y no contiene nada de sal. Con un contenido de humedad más bajo que la mayoría de las otras mantequillas, es un ingrediente esencial para cocinar y hornear, lo que lo hace especialmente útil para hacer pasteles y pudines. 100% natural !",
+    "butterQuantity" : "500 gramos",
+    "butterPrice" : "₹ 150",
+
+    "juiceName" : "Jugo de naranja fresco",
+    "juiceDecription" : "Las naranjas han sido un sabor de fruta favorito para todo tipo de recetas, desde siempre. Es amado por los niños y los adultos también lo disfrutan. Sin embargo, no es solo porque saben tan rico. Hay muchos otros beneficios de las naranjas en una dieta. Una naranja normal, digamos unos 180 gramos, puede darte suficiente vitamina C para dos días. No solo eso, las naranjas están fácilmente disponibles, se pueden almacenar sin problemas y el sabor a naranja de Real Fruit Power es tan popular como la fruta misma. También puede consultar las diversas recetas de cócteles sin alcohol que puede preparar con Real Fruit Power.",
+    "juiceQuantity" : "1 litro",
+    "juicePrice" : "₹ 150", 
+
+    "samosaName" : "samosa",
+    "vegRollName":"Rollo De Vegetales",
+    "paneerWrapName":"Envoltura de Paneer",
+    "vegBurgerName":"Hamburguesa Vegetal",
+
+    "homeTitle" : "Página de inicio",
+    "viewAllBtnText" : "Ver todo",
+    "minOrderText" : "Pedido mínimo",
+    "foodCategory" : "Categoría de alimentos",
+    "quantity" : "Cantidad",
+    "price" : "Precio"
+}

@@ -1,0 +1,32 @@
+{
+    "helloWorld": "Hello World!",
+    "appTitle": "Localization App",
+
+    "appContent": "This Application is made to demo the usage of localization in Flutter.",
+    "breadName" : "Fresh Whole Wheat Bread",
+    "breadDecription" : "Whole wheat bread or wholemeal bread is a type of bread made using flour that is partly or entirely milled from whole or almost-whole wheat grains, see whole-wheat flour and whole grain. It is one kind of brown bread.",
+    "breadQuantity" : "500 grams",
+    "breadPrice" : "₹ 50",
+
+    "butterName" : "Fresh Butter",
+    "butterDecription" : "Unsalted Butter is made from fresh cream and nothing else. It is Fresh Butter in its purest form, and doesn't contain any salt at all. With lower moisture content than most other butters, it is an essential cooking and baking ingredient making it especially helpful when making pastries and puddings. 100% Natural !",
+    "butterQuantity" : "500 grams",
+    "butterPrice" : "",
+
+    "juiceName" : "Fresh Orange Juice",
+    "juiceDecription" : "Oranges have been a favourite fruit flavour for all kinds of recipes, since forever. It’s loved by kids and grownups dig it too. Yet, it’s not just because they taste so yum. There are many other benefits of oranges in a diet. A normal orange, say about 180 grams,can give you enough Vitamin C to last for two days. Not just that, oranges are easily available, can be stored without a hassle and Real Fruit Power’s Orange flavour is as popular as the fruit itself. You can also check out the various mocktail recipes you can make with Real Fruit Power.",
+    "juiceQuantity" : "1 Litre",
+    "juicePrice" : "₹ 150",
+
+    "samosaName" : "Samosa",
+    "vegRollName":"Vegetable Roll",
+    "paneerWrapName":"Paneer Wrap",
+    "vegBurgerName":"Vegetable Burger",
+
+    "homeTitle" : "Home",
+    "viewAllBtnText" : "View All",
+    "minOrderText" : "Minimum Order",
+    "foodCategory" : "Food Category",
+    "quantity" : "Quantity",
+    "price" : "Price"
+}
