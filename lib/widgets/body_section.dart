@@ -1,11 +1,7 @@
-import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:localization_app/helpers/constants.dart';
 import 'package:localization_app/models/orders_model.dart';
-import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:localization_app/share/app_text_styles.dart';
-import 'package:localization_app/share/reusable_widgets.dart';
 import 'package:localization_app/widgets/order_details.dart';
 
 Widget bodySection(BuildContext context) {

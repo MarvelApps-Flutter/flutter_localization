@@ -1,30 +1,45 @@
 // import 'dart:html';
 // import 'dart:js';
 
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:localization_app/helpers/constants.dart';
-import 'package:localization_app/models/orders_model.dart';
-
-import 'package:localization_app/screens/main_page_en.dart';
-import 'package:localization_app/screens/main_page_es.dart';
-import 'package:localization_app/screens/main_page_hindi.dart';
-import 'package:localization_app/widgets/body_section.dart';
 import 'package:localization_app/widgets/bottom_nav_bar.dart';
 import 'package:localization_app/widgets/home_body_section.dart';
+import 'package:localization_app/widgets/home_page.dart';
 
 void main() {
   runApp(const MyApp());
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   const MyApp({Key? key}) : super(key: key);
 
+  @override
+  State<MyApp> createState() => _MyAppState();
+  static _MyAppState? of(BuildContext context) =>
+      context.findAncestorStateOfType<_MyAppState>();
+}
+
+class _MyAppState extends State<MyApp> {
   // This widget is the root of your application.
+  Locale? currentLocale;
+  String localeName = "en";
+  //Platform.localeName.split("_").first;
+
+  void setLocale(Locale value) {
+    setState(() {
+      currentLocale = value;
+      localeName = value.languageCode;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
         title: 'Flutter Demo',
         debugShowCheckedModeBanner: false,
         localizationsDelegates: [
@@ -39,10 +54,11 @@ class MyApp extends StatelessWidget {
           Locale('en', ''), // English, no country code
           Locale('es', ''), // Spanish, no country code
         ],
-        locale: Locale('hi', ''),
-        home: MyHomePage(
-          index: 1,
-        ));
+        locale: currentLocale,
+        // Provider.of<LocaleProvider>(context, listen: true)
+        //     .currentLocale,
+        //  Locale('hi', ''),
+        home: HomePage());
   }
 }
 
@@ -56,10 +72,10 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   List<String> imgList = [
-    'assets/images/samosa.jpeg',
-    'assets/images/veg_roll.jpeg',
-    'assets/images/paneer_wrap.jpeg',
-    'assets/images/veg_burger.jpeg',
+    SAMOSA_IMAGE,
+    VEG_ROLL_IMAGE,
+    PANEER_WRAP_IMAGE,
+    VEG_BURGER_IMAGE
   ];
   int pageIndex = 0;
   List<Widget> imageSliders = [];
@@ -140,18 +156,15 @@ class _MyHomePageState extends State<MyHomePage> {
           )
         ],
       ),
-      // appBar: AppBar(
-      //   backgroundColor: Colors.teal,
-      //   title: Text(AppLocalizations.of(context)!.appTitle),
-      //   centerTitle: true,
-      // ),
       bottomNavigationBar: BottomNavBar(
         index: widget.index,
       ),
-
       body: SingleChildScrollView(
         child: Column(
-          children: [homeScreenScaffoldBody(context, imageSliders)],
+          children: [
+            FlutterLogo(),
+            homeScreenScaffoldBody(context, imageSliders)
+          ],
         ),
       ),
     );

@@ -1,12 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
-
-import 'package:flutter/material.dart';
-import 'package:flutter_easyloading/flutter_easyloading.dart';
-import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:localization_app/helpers/constants.dart';
 import 'package:localization_app/models/food_model.dart';
 import 'package:localization_app/share/app_text_styles.dart';
-import 'package:localization_app/share/reusable_widgets.dart';
 import 'package:localization_app/widgets/food_category.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
@@ -26,28 +22,30 @@ Widget homeScreenScaffoldBody(BuildContext context, List<Widget> imageSliders) {
     FoodData(
         id: "1",
         name: AppLocalizations.of(context)!.samosaName,
-        imagePath: "assets/images/samosa.jpeg",
+        imagePath: SAMOSA_IMAGE,
         price: 28.0),
     FoodData(
         id: "2",
         name: AppLocalizations.of(context)!.vegRollName,
-        imagePath: "assets/images/veg_roll.jpeg",
+        imagePath: VEG_ROLL_IMAGE,
         price: 100.0),
     FoodData(
         id: "3",
         name: AppLocalizations.of(context)!.paneerWrapName,
-        imagePath: "assets/images/paneer_wrap.jpeg",
+        imagePath: PANEER_WRAP_IMAGE,
         price: 120.0),
     FoodData(
         id: "4",
         name: AppLocalizations.of(context)!.vegBurgerName,
-        imagePath: "assets/images/veg_burger.jpeg",
+        imagePath: VEG_BURGER_IMAGE,
         price: 98.0)
   ];
   return SingleChildScrollView(
       child: Column(
     children: [
-      buildSizedBoxWidget(5),
+      SizedBox(
+        height: 5,
+      ),
       CarouselSlider(
           options: CarouselOptions(
             autoPlay: true,
@@ -55,21 +53,24 @@ Widget homeScreenScaffoldBody(BuildContext context, List<Widget> imageSliders) {
             enlargeCenterPage: true,
           ),
           items: imageSliders),
-      buildSizedBoxWidget(5),
+      SizedBox(
+        height: 5,
+      ),
       Padding(
         padding: const EdgeInsets.all(5.0),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
-            Text(
-              // "Food Category"
-              AppLocalizations.of(context)!.foodCategory,
-              style: AppTextStyles.boldTextStyle,
+            Padding(
+              padding: EdgeInsets.all(12),
+              child: Text(
+                AppLocalizations.of(context)!.foodCategory,
+                style: AppTextStyles.boldTextStyle,
+              ),
             ),
             GestureDetector(
               onTap: () {},
               child: Text(
-                // "View All",
                 AppLocalizations.of(context)!.viewAllBtnText,
                 style: AppTextStyles.mediumTextStyle,
               ),

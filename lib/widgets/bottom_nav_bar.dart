@@ -1,9 +1,7 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:localization_app/main.dart';
-import 'package:localization_app/screens/main_page_en.dart';
-import 'package:localization_app/screens/main_page_es.dart';
-import 'package:localization_app/screens/main_page_hindi.dart';
+
+import '../helpers/constants.dart';
 
 class BottomNavBar extends StatefulWidget {
   int index;
@@ -14,8 +12,6 @@ class BottomNavBar extends StatefulWidget {
 }
 
 class _BottomNavBarState extends State<BottomNavBar> {
-  //int index = 0;
-
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -36,7 +32,6 @@ class _BottomNavBarState extends State<BottomNavBar> {
               topLeft: Radius.circular(20), topRight: Radius.circular(20))),
       height: MediaQuery.of(context).size.height * 0.085,
       width: MediaQuery.of(context).size.width,
-      // color: Colors.black,
       alignment: Alignment.center,
       child: Padding(
         padding: const EdgeInsets.all(8.0),
@@ -46,79 +41,95 @@ class _BottomNavBarState extends State<BottomNavBar> {
           children: [
             InkWell(
               onTap: () {
-                setState(() {
-                  widget.index = 1;
-                });
-                Navigator.pushReplacement(context,
-                    MaterialPageRoute(builder: (context) => HindiPage()));
-                setState(() {
-                  widget.index = 1;
-                });
+                MyApp.of(context)?.setLocale(Locale(HINDI_LANG_CODE));
               },
               child: Column(
-                // ignore: prefer_const_literals_to_create_immutables
                 children: [
                   Icon(
                     Icons.language,
-                    color: widget.index == 1 ? Colors.red : Colors.black,
+                    color: MyApp.of(context)?.currentLocale ==
+                                Locale(HINDI_LANG_CODE) ||
+                            MyApp.of(context)?.localeName == HINDI_LANG_CODE
+                        ? Colors.red
+                        : Colors.black,
                   ),
                   Text(
-                    "हिन्दी",
+                    HINDI_LANGUAGE_LABEL,
                     style: TextStyle(
-                        color: widget.index == 1 ? Colors.red : Colors.black,
+                        color: MyApp.of(context)?.currentLocale ==
+                                    Locale(HINDI_LANG_CODE) ||
+                                MyApp.of(context)?.localeName == HINDI_LANG_CODE
+                            ? Colors.red
+                            : Colors.black,
                         fontWeight: FontWeight.bold,
-                        fontSize: widget.index == 1 ? 15 : 12),
+                        fontSize: MyApp.of(context)?.currentLocale ==
+                                    Locale(HINDI_LANG_CODE) ||
+                                MyApp.of(context)?.localeName == HINDI_LANG_CODE
+                            ? 15
+                            : 12),
                   )
                 ],
               ),
             ),
             InkWell(
               onTap: () {
-                setState(() {
-                  widget.index = 2;
-                });
-                Navigator.pushReplacement(context,
-                    MaterialPageRoute(builder: (context) => EnglishPage()));
-                setState(() {
-                  widget.index = 2;
-                });
+                MyApp.of(context)?.setLocale(Locale(ENGLISH_LANG_CODE));
               },
               child: Column(
-                // ignore: prefer_const_literals_to_create_immutables
                 children: [
-                  // ignore: prefer_const_constructors
                   Icon(Icons.language,
-                      color: widget.index == 2 ? Colors.red : Colors.black),
-                  Text("English",
+                      color: MyApp.of(context)?.currentLocale ==
+                                  Locale(ENGLISH_LANG_CODE) ||
+                              MyApp.of(context)?.localeName == ENGLISH_LANG_CODE
+                          ? Colors.red
+                          : Colors.black),
+                  Text(ENGLISH_LANGUAGE_LABEL,
                       style: TextStyle(
-                          color: widget.index == 2 ? Colors.red : Colors.black,
+                          color: MyApp.of(context)?.currentLocale ==
+                                      Locale(ENGLISH_LANG_CODE) ||
+                                  MyApp.of(context)?.localeName ==
+                                      ENGLISH_LANG_CODE
+                              ? Colors.red
+                              : Colors.black,
                           fontWeight: FontWeight.bold,
-                          fontSize: widget.index == 2 ? 15 : 12))
+                          fontSize: MyApp.of(context)?.currentLocale ==
+                                      Locale(ENGLISH_LANG_CODE) ||
+                                  MyApp.of(context)?.localeName ==
+                                      ENGLISH_LANG_CODE
+                              ? 15
+                              : 12))
                 ],
               ),
             ),
             InkWell(
               onTap: () {
-                setState(() {
-                  widget.index = 3;
-                });
-                Navigator.pushReplacement(context,
-                    MaterialPageRoute(builder: (context) => SpanishPage()));
-                setState(() {
-                  widget.index = 3;
-                });
+                MyApp.of(context)?.setLocale(Locale(SPANISH_LANG_CODE));
               },
               child: Column(
-                // ignore: prefer_const_literals_to_create_immutables
                 children: [
-                  // ignore: prefer_const_constructors
-                  Icon(Icons.language,
-                      color: widget.index == 3 ? Colors.red : Colors.black),
-                  Text("Español",
+                  Icon(
+                    Icons.language,
+                    color: MyApp.of(context)?.currentLocale ==
+                                Locale(SPANISH_LANG_CODE) ||
+                            MyApp.of(context)?.localeName == SPANISH_LANG_CODE
+                        ? Colors.red
+                        : Colors.black,
+                  ),
+                  Text(SPANISH_LANGUAGE_LABEL,
                       style: TextStyle(
-                          color: widget.index == 3 ? Colors.red : Colors.black,
+                          color: MyApp.of(context)?.currentLocale ==
+                                      Locale(SPANISH_LANG_CODE) ||
+                                  MyApp.of(context)?.localeName ==
+                                      SPANISH_LANG_CODE
+                              ? Colors.red
+                              : Colors.black,
                           fontWeight: FontWeight.bold,
-                          fontSize: widget.index == 3 ? 15 : 12))
+                          fontSize: MyApp.of(context)?.currentLocale ==
+                                      Locale(SPANISH_LANG_CODE) ||
+                                  MyApp.of(context)?.localeName ==
+                                      SPANISH_LANG_CODE
+                              ? 15
+                              : 12))
                 ],
               ),
             )
